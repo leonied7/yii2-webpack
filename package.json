@@ -9,6 +9,10 @@
       "email": "kdnn@mail.ru"
     }
   ],
+  "scripts": {
+    "yii2-webpack:dev": "webpack-dev-server --config webpack.dev.js",
+    "yii2-webpack:build": "webpack --config webpack.prod.js"
+  },
   "license": "MIT",
   "devDependencies": {
     "html-webpack-harddisk-plugin": "^1.0.1",
