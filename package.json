@@ -1,11 +1,16 @@
 {
   "name": "yii2-webpack",
   "version": "0.0.1",
-  "description": "",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+  "description": "Webpack integration with Yii2",
+  "keywords": ["yii2", "webpack"],
+  "authors": [
+    {
+      "name": "Denis Kolosov",
+      "email": "kdnn@mail.ru"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
     "html-webpack-harddisk-plugin": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.10",
