@@ -9,10 +9,6 @@
       "email": "kdnn@mail.ru"
     }
   ],
-  "bin": {
-    "yii2-webpack:dev": "webpack-dev-server --config webpack.dev.js",
-    "yii2-webpack:build": "webpack --config webpack.prod.js"
-  },
   "scripts": {
     "yii2-webpack:dev": "webpack-dev-server --config webpack.dev.js",
     "yii2-webpack:build": "webpack --config webpack.prod.js"
