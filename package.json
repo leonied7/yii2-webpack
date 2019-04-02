@@ -2,20 +2,29 @@
   "name": "yii2-webpack",
   "version": "0.0.1",
   "description": "Webpack integration with Yii2",
-  "keywords": ["yii2", "webpack"],
+  "keywords": [
+    "yii2",
+    "webpack"
+  ],
   "authors": [
     {
       "name": "Denis Kolosov",
       "email": "kdnn@mail.ru"
     }
   ],
-  "main": "webpack.common.js",
+  "bin": {
+    "yii2-webpack": "./bin/cli.js"
+  },
+  "scripts": {
+    "postinstall": "npm run yii2-webpack --default-config"
+  },
   "license": "MIT",
   "devDependencies": {
     "html-webpack-harddisk-plugin": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.10",
     "webpack": "^4.29.6",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "inquirer": "^6.2.2"
   }
 }
