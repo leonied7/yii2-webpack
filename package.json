@@ -16,7 +16,7 @@
     "yii2-webpack": "./bin/cli.js"
   },
   "scripts": {
-    "postinstall": "npm run yii2-webpack --default-config"
+    "postinstall": "node ./bin/cli.js --default-config"
   },
   "license": "MIT",
   "devDependencies": {
