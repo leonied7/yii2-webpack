@@ -1,11 +1,11 @@
 <?php
-namespace app\webpack\assets;
+namespace app<%= htmlWebpackPlugin.options.yii2.namespace %>;
 
 use yii\web\AssetBundle;
 
 class <%= _.upperFirst(_.camelCase(htmlWebpackPlugin.options.entry)) %>Asset extends AssetBundle
 {
-    public $sourcePath = '@app/webpack/dist';
+    public $sourcePath = '@app<%= htmlWebpackPlugin.options.yii2.sourcePath %><%= htmlWebpackPlugin.options.yii2.calculateDist(webpackConfig.output.path) %>';
 
     public $css = [
         <% for (var css in htmlWebpackPlugin.files.css) { %>'<%= htmlWebpackPlugin.files.css[css] %>',<% } %>
