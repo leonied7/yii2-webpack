@@ -3,7 +3,7 @@ const entryHelper = require('./helpers/entry')
 const merge = require('webpack-merge')
 const configLoader = require('./helpers/config')
 const common = configLoader('./webpack.common.js')
-const settings = require('./settings')
+const settings = configLoader('./yii2-webpack-settings.json') || require('./lib/defaultValues')
 
 module.exports = merge.smart({
   plugins: [
