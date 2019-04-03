@@ -12,7 +12,7 @@ const run = async () => {
     const inquirer = require('../lib/inquirer')
     credentials = await inquirer.askQuestions()
   }
-  fs.writeFileSync(path.resolve(__dirname, '../settings.json'), JSON.stringify(credentials))
+  fs.writeFileSync(path.resolve(process.cwd(), 'yii2-webpack-settings.json'), JSON.stringify(credentials))
 }
 
 run()
