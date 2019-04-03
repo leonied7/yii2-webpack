@@ -15,9 +15,6 @@
   "bin": {
     "yii2-webpack": "./bin/cli.js"
   },
-  "scripts": {
-    "postinstall": "node ./bin/cli.js --default-config"
-  },
   "license": "MIT",
   "devDependencies": {
     "html-webpack-harddisk-plugin": "^1.0.1",
