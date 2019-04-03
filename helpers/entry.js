@@ -1,26 +1,43 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const _ = require('lodash')
-const path = require('path')
+const {resolve, relative} = require('path')
 
 module.exports = {
+  firstLastSlash: /^\/|\/$/g,
   /**
    * @param {object} entry
-   * @param assetDir
+   * @param assetDirectory
+   * @param webpackDirectory
+   * @param template
    * @param options
    * @return {object[]}
    */
-  generateHtmlPlugins: (entry, {assetDir, ...options}) => {
+  generateHtmlPlugins (entry, {assetDirectory, webpackDirectory, template, ...options}) {
+    assetDirectory = this.correctDirectory(assetDirectory)
+    webpackDirectory = this.correctDirectory(webpackDirectory)
+    let currentPath = [webpackDirectory, assetDirectory].join('/').replace(this.firstLastSlash, '')
     return Object.keys(entry).reduce((result, key) => {
       result.push(new HtmlWebpackPlugin({
         inject: false,
-        template: path.resolve(__dirname, '../index.ejs'),
+        template: resolve(__dirname, template),
         chunks: [],
         entry: key,
+        yii2: {
+          namespace: (currentPath ? '\\' + currentPath : currentPath).replace(/\//g, '\\'),
+          sourcePath: (webpackDirectory ? '/' + webpackDirectory : webpackDirectory),
+          calculateDist (outputPath) {
+            let resultPath = relative(process.cwd(), outputPath)
+            return resultPath ? '/' + resultPath : resultPath
+          }
+        },
         additionOptions: options,
-        filename: path.resolve(process.cwd(), assetDir + '/' + _.upperFirst(_.camelCase(key)) + 'Asset.php'),
+        filename: resolve(process.cwd(), (assetDirectory ? assetDirectory + '/' : assetDirectory) + _.upperFirst(_.camelCase(key)) + 'Asset.php'),
         alwaysWriteToDisk: true
       }))
       return result
     }, [])
+  },
+  correctDirectory (directory) {
+    return directory.replace('/\\/g', '/').replace(this.firstLastSlash, '')
   }
 }
