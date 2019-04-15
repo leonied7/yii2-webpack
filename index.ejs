@@ -1,12 +1,12 @@
 <?php
-namespace app<%= htmlWebpackPlugin.options.yii2.namespace %>;
+namespace <%= htmlWebpackPlugin.options.yii2Entry.namespace %>;
 
 use yii\web\AssetBundle;
 
-class <%= _.upperFirst(_.camelCase(htmlWebpackPlugin.options.entry)) %>Asset extends AssetBundle
+class <%= htmlWebpackPlugin.options.yii2Entry.className %> extends AssetBundle
 {
     <% if (webpackConfig.mode === 'production') { %>
-    public $sourcePath = '@app<%= htmlWebpackPlugin.options.yii2.sourcePath %><%= htmlWebpackPlugin.options.yii2.calculateDist(webpackConfig.output.path) %>';
+    public $sourcePath = '<%= htmlWebpackPlugin.options.yii2Entry.getSourcePath(webpackConfig.output.path) %>';
     <% } %>
 
     public $css = [
