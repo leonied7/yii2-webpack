@@ -1,13 +1,17 @@
-const merge = require('webpack-merge')
-const common = require('./webpack.common.js')
-const configLoader = require('./helpers/config')
+const ChunksFromEntryPlugin = require('./plugins/ChunksFromEntry')
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
+const config = require('./lib/config')
+let configuration = new config({
+  mode: 'development'
+})
+configuration
+  .mergeTo(config.load('./webpack.dev.js'))
+  .addHtmlPluginToEntries()
+  .mergeTo({
+    plugins: [
+      new ChunksFromEntryPlugin(),
+      new HtmlWebpackHarddiskPlugin()
+    ]
+  })
 
-module.exports = merge.smart(common, {
-  mode: 'development',
-  devtool: 'inline-source-map',
-  plugins: [
-    new HtmlWebpackHarddiskPlugin()
-  ]
-}, configLoader('./webpack.dev.js'))
-
+module.exports = configuration.config

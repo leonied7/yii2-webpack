@@ -1,7 +1,15 @@
-const merge = require('webpack-merge')
-const common = require('./webpack.common.js')
-const configLoader = require('./helpers/config')
-
-module.exports = merge.smart(common, {
+const ChunksFromEntryPlugin = require('./plugins/ChunksFromEntry')
+const config = require('./lib/config')
+let configuration = new config({
   mode: 'production'
-}, configLoader('./webpack.prod.js'))
+})
+configuration
+  .mergeTo(config.load('./webpack.prod.js'))
+  .addHtmlPluginToEntries()
+  .mergeTo({
+    plugins: [
+      new ChunksFromEntryPlugin(),
+    ]
+  })
+
+module.exports = configuration.config
