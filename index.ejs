@@ -5,7 +5,9 @@ use yii\web\AssetBundle;
 
 class <%= _.upperFirst(_.camelCase(htmlWebpackPlugin.options.entry)) %>Asset extends AssetBundle
 {
+    <% if (webpackConfig.mode === 'production') { %>
     public $sourcePath = '@app<%= htmlWebpackPlugin.options.yii2.sourcePath %><%= htmlWebpackPlugin.options.yii2.calculateDist(webpackConfig.output.path) %>';
+    <% } %>
 
     public $css = [
         <% for (var css in htmlWebpackPlugin.files.css) { %>'<%= htmlWebpackPlugin.files.css[css] %>',<% } %>
