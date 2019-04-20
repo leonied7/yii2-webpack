@@ -8,11 +8,11 @@ Installation
 
 
 ```bash
-  npm i --save html-webpack-plugin
+  npm i --save yii2-webpack
 ```
 
 ```bash
-  yarn add html-webpack-plugin
+  yarn add yii2-webpack
 ```
 
 **Package.json**
