@@ -78,6 +78,15 @@ Configuration
 
 Use the CLI for change the configuration
 1. Add to `package.json` script `yii2-webpack`
+    ```json
+    {
+      "name": "my-app",
+      "scripts": {
+        "yii2-webpack": "yii2-webpack",
+        "dev": "yii2-webpack-exec --yii2-webpack-config dev"
+      }
+    }
+    ```
 2. Run via command line `yii2-webpack`
 3. The CLI will create a `yii2-webpack-settings.json` config in the root directory
 
