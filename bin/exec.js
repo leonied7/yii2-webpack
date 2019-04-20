@@ -6,7 +6,7 @@ yargs.options({
   'yii2-webpack-config': {
     type: 'string',
     describe: 'Config type',
-    choices: ['dev', 'prod', 'common'],
+    choices: ['dev', 'prod'],
     demandOption: true
   },
   'yii2-webpack-command': {
