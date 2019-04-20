@@ -78,6 +78,7 @@ Configuration
 
 Use the CLI for change the configuration
 1. Add to `package.json` script `yii2-webpack`
+
     ```json
     {
       "name": "my-app",
@@ -88,7 +89,7 @@ Use the CLI for change the configuration
     }
     ```
 2. Run via command line `yii2-webpack`
-3. The CLI will create a `yii2-webpack-settings.json` config in the root directory
+3. The CLI will create a `yii2-webpack-settings.json` config in the webpack directory
 
 **Options**
 
