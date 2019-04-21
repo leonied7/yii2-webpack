@@ -1,6 +1,6 @@
 {
   "name": "yii2-webpack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack integration with Yii2",
   "keywords": [
     "yii2",
