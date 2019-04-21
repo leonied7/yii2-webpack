@@ -22,7 +22,8 @@ The project needs a `package.json` file to specify how to start `yii2-webpack`:
 {
   "name": "my-app",
   "scripts": {
-    "dev": "yii2-webpack-exec --yii2-webpack-config dev"
+    "dev": "yii2-webpack-exec --yii2-webpack-config dev",
+    "build": "yii2-webpack-exec --yii2-webpack-config prod"
   }
 }
 ```
@@ -39,7 +40,7 @@ The project needs a `package.json` file to specify how to start `yii2-webpack`:
 Howto use it
 ------------
 
-`scripts` will launch yii2-webpack via `npm run dev`
+`scripts` will launch yii2-webpack via `npm run dev`. The script uses the config of your development.
 
 All entries must be described by an object. The key is used for the asset name.
 
