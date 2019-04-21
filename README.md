@@ -6,7 +6,6 @@ This extension allow use [Webpack 3 or 4](https://webpack.js.org/) as the asset 
 Installation
 ------------
 
-
 ```bash
   npm i --save yii2-webpack
 ```
@@ -31,8 +30,8 @@ The project needs a `package.json` file to specify how to start `yii2-webpack`:
 **Flags**
 
 * `--yii2-webpack-config`: 
-    * `dev` - uses `webpack-dev-server` by default and dev config
-    * `prod` - uses `webpack` by default and prod config
+    * `dev` - uses `webpack-dev-server` by default and config `webpack.dev.js` located in webpack directory
+    * `prod` - uses `webpack` by default and config `webpack.prod.js` located in webpack directory
 * `--yii2-webpack-command` - to use different command 
 
 > The remaining flags will be sent to the command
