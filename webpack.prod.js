@@ -4,7 +4,7 @@ let configuration = new config({
   mode: 'production'
 })
 configuration
-  .mergeTo(config.load('./webpack.prod.js'))
+  .mergeTo(config.load(configuration.settings.prodConfig))
   .addHtmlPluginToEntries()
   .mergeTo({
     plugins: [

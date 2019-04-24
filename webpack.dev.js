@@ -5,7 +5,7 @@ let configuration = new config({
   mode: 'development'
 })
 configuration
-  .mergeTo(config.load('./webpack.dev.js'))
+  .mergeTo(config.load(configuration.settings.devConfig))
   .addHtmlPluginToEntries()
   .mergeTo({
     plugins: [
