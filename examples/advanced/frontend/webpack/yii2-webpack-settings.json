@@ -1,0 +1,1 @@
+{"assetDirectory":"assets","namespace":"@frontend/webpack","devConfig":"webpack.dev.js","prodConfig":"webpack.prod.js"}

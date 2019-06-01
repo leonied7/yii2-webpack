@@ -1,0 +1,1 @@
+Example of using webpack in a separate directory and advanced yii app.
