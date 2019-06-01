@@ -93,6 +93,8 @@ Use the CLI for change the configuration
 
 **Options**
 
+Available parameters `yii2-webpack-settings.json`:
+
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**[`assetDirectory`]**|`{String}`|`assets`|`webpack` relative path to the output asset directory|
