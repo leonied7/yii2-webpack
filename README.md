@@ -62,7 +62,7 @@ yii2-webpack-settings.json:
 ```json
 {
   "assetDirectory":"assets",
-  "webpackDirectory":"webpack"
+  "namespace":"@app/webpack"
 }
 ```
 
@@ -93,8 +93,13 @@ Use the CLI for change the configuration
 
 **Options**
 
-Additional parameters `yii2-webpack-settings.json`:
-
-* `template` - `webpack` relative or absolute path to the template. By default it will use `<path_to_yii2-webpack>/index.ejs`
+|Name|Type|Default|Description|
+|:--:|:--:|:-----:|:----------|
+|**[`assetDirectory`]**|`{String}`|`assets`|`webpack` relative path to the output asset directory|
+|**[`namespace`]**|`{String}`|`@app`|Namespace before your `package.json`|
+|**[`webpackDirectory`]**|`{String}`||The directory up to `package.json` relative to @app. **Deprecated**, use `namespace` parameter|
+|**[`devConfig`]**|`{String}`|`'webpack.dev.js'`|The file of the development configuration. Defaults to `webpack.dev.js`. You can specify a subdirectory here too (eg: `src/dev.js`)|
+|**[`prodConfig`]**|`{String}`|`'webpack.prod.js'`|The file of the production configuration. Defaults to `webpack.prod.js`. You can specify a subdirectory here too (eg: `src/prod.js`)|
+|**[`template`]**|`{String}`||`webpack` relative or absolute path to the template. By default it will use `<path_to_yii2-webpack>/index.ejs`. Please see the [docs](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md) for details|
 
 > All described parameters are passed to the template and can be obtained via `htmlWebpackPlugin.options.yii2Entry.options`

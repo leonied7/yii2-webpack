@@ -1,6 +1,6 @@
 {
   "name": "yii2-webpack",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Webpack integration with Yii2",
   "keywords": [
     "yii2",
@@ -12,6 +12,10 @@
       "email": "kdnn@mail.ru"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonied7/yii2-webpack.git"
+  },
   "bin": {
     "yii2-webpack": "./bin/cli.js",
     "yii2-webpack-exec": "./bin/exec.js"
